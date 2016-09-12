@@ -1,0 +1,17 @@
+//start header
+header.header
+  .header__inner
+      .burger
+          span
+          span
+          span
+      nav.nav
+          - var nav = ["О проекте", "Доставка и оплата", "Производство", "Помощь", "Контакты"]
+          ul.nav__list
+              each item in nav
+                  li.nav__item
+                      a.nav__link(href="#", title="#{item}")=item
+      .header__box
+          a.header__tel(href="tel:+749588877665") +7 (495) 888 77 665
+          a.header__cart(href="#" title="")
+//end header

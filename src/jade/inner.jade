@@ -1,0 +1,95 @@
+extends _layout
+
+block title
+   title Artcore inner
+
+block content
+   include _header_in
+   main
+      //start catalog-line
+      section.catalog-line
+         .catalog-line__inner
+            ul.catalog-line__list
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/football.png')")
+                     p.catalog-line__item-name футболки
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/polo.png')")
+                     p.catalog-line__item-name поло
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/football.png')")
+                     p.catalog-line__item-name футболки
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/polo.png')")
+                     p.catalog-line__item-name поло
+
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/tolst.png')")
+                     p.catalog-line__item-name толстовки
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/spec.png')")
+                     p.catalog-line__item-name спецодежда
+
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/vetr.png')")
+                     p.catalog-line__item-name ветровки
+
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/baseball.png')")
+                     p.catalog-line__item-name бейсболки
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/pled.png')")
+                     p.catalog-line__item-name пледы
+
+               li.catalog-line__item
+                  a.catalog-line__link(href="#" title='')
+                     .catalog-line__img(role="img" style="background-image: url('img/flag.png')")
+                     p.catalog-line__item-name флаги
+      //end catalog-line
+      //start goods
+      section.goods
+         .goods__inner
+            aside.goods__aside
+               ul.goods__category
+                  //creating menu and submenu
+                  - var goodsCategory = ['Путин ','Живопись ','Природа ','Животный Мир ','Спорт ','Мультфильмы ','Сериалы','Кино','Food','Travel','Музыка']
+                  each item, index in goodsCategory
+                     if(index === 2)
+                        //creating inseted list
+                        li.goods__category-item=item
+                           span.js-status -
+                           ul.goods__subcategory
+                              li.goods__subcategory-item: a.goods__subcategory-link стихия
+                              li.goods__subcategory-item: a.goods__subcategory-link macro
+                              li.goods__subcategory-item: a.goods__subcategory-link цветы
+                              li.goods__subcategory-item: a.goods__subcategory-link пейзаж
+                     else
+                        li.goods__category-item=item
+                           span.js-status +
+            .goods__content
+               mixin sizes
+                  ul.sizes
+                     - var sizes = ['xs', 's', 'm', 'xl']
+                     each  item in sizes
+                        li.sizes__size=item
+
+                - var goodsContentItems = ['свитшот','топик','боди','шорты','свитшот','топик','боди','шорты', 'свитшот','топик','боди','шорты']
+               each item in goodsContentItems
+                  a.goods__content-item(href="#" title="")
+                     +sizes
+                     img(src="http://placecage.com/177/187")
+                     p=item
+                     span 250 p.
+      //end goods
+      include _benefits
+      include _partners
+      include _footer

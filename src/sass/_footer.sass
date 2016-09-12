@@ -1,0 +1,119 @@
+.footer
+	&__inner
+		+inner
+		height: 310px
+		padding: 69px 90px 0 90px
+		+r($rWidthDesc)
+			width: auto
+			padding: 50px 5px 15px 5px
+			height: auto
+	&__box
+		+flex(space-between, flex-start)
+		flex-wrap: wrap
+
+	&__links-wrap
+		+flex(flex-start)
+		position: relative
+		top: -7px
+		+r($rWidthDesc)
+			margin: 0 10px
+		+r($rWidthMob)
+			width: 100%
+			+flex(center)
+		&:after
+			display: block
+			content: ''
+			width: 1px
+			height: 202px
+			background-color: $linesColor
+			top: -17px
+			left: 135px
+			position: absolute
+			+r($rWidthMob)
+				left: 50%
+				margin-left: -4px
+	&__title
+		color: $primaryTextColor
+		font-weight: 400
+		font-size: 20px
+		text-align: right
+		margin-bottom: 15px
+	&__list
+		margin-right: 33px
+		&:last-of-type
+			margin-right: 0
+
+	&__list-item
+		text-align: right
+	&__link
+		font-size: 13px
+		color: $primaryTextColor
+		font-weight: 400
+		margin-bottom: 4px
+		display: inline-block
+		border-bottom: 1px solid transparent
+		&:hover
+			border-bottom-color: $linesColor
+	&__tel
+		font-size: 18px
+		font-weight: 500
+		color: $primaryTextColor
+		text-align: center
+		display: block
+		width: 220px
+		height: 67px
+		line-height: 67px
+		border: 4px solid $primaryTextColor
+		&:hover
+			background: $primaryTextColor
+			color: $almostWhite
+		+r($rWidthMob)
+			margin: 40px auto 20px auto
+
+	&__developer
+		margin-top: 43px
+		font-size: 13px
+		font-weight: 400
+		color: #949494
+		text-align: center
+		& a
+			color: $primaryTextColor
+.left-align
+	text-align: left
+
+.socials
+	font-size: 0
+	+r($rWidthMob)
+		width: 100%
+		text-align: center
+		order: 3
+	&__item
+		display: inline-block
+		margin-right: 12px
+		&:last-of-type
+			margin-right: 0
+	&__link
+		width: 67px
+		height: 67px
+		border: 4px solid $primaryTextColor
+		display: block
+		position: relative
+		&_tw:after
+			display: block
+			content: ''
+			position: absolute
+			+s(tw)
+			left: 50%
+			top: 50%
+			margin-left: -14px
+			margin-top: -11px
+		&_fb:after
+			@extend .socials__link_tw:after
+			+s(fb)
+			margin-left: -8px
+			margin-top: -15 px
+		&_vk:after
+			@extend .socials__link_tw:after
+			+s(vk)
+			margin-left: -16px
+			margin-top: -9px

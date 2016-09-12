@@ -1,0 +1,19 @@
+//start header
+header.header.header_in
+   .header__inner.header__inner_in
+
+      a.header__logo(href="" title="")
+      .burger
+         span
+         span
+         span
+      nav.nav.nav_in
+         - var nav = ["Мужская коллекция", "Женская коллекция", "Скидки"]
+         ul.nav__list.nav__list_in
+            each item in nav
+               li.nav__item
+                  a.nav__link.nav__link_in(href="#", title="#{item}")=item
+      .header__box
+         a.header__tel(href="tel:+749588877665") +7 (495) 888 77 665
+         a.header__cart.header__cart_in(href="#" title="")
+//end header

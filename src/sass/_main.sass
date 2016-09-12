@@ -1,0 +1,394 @@
+
+.intro
+	&__inner
+		height: 263px
+		+inner
+		+flex(space-around, flex-end)
+		padding: 15px 35px 60px 35px
+		position: relative
+		+r($rWidthDesc)
+			+flex(space-between, flex-end)
+			width: auto
+			padding: 25px 20px 10px 20px
+			height: auto
+		+r($rWidthMob)
+			flex-wrap: wrap
+			padding: 30px 10px
+		&:before, &:after
+			display: block
+			content: ''
+			position: absolute
+			width: 492px
+			height: 1px
+			background: $linesColor
+			left: 0
+			bottom: 43px
+			+r($rWidthDesc)
+				display: none
+		&:after
+			right: 0
+			left: auto
+
+.collection-link
+	text-transform: uppercase
+	font-size: 20px
+	font-weight: 700
+	color: $textColor
+	+openSans
+	letter-spacing: 2px
+	+r($rWidthMob)
+		order: 2
+		width: 100%
+		text-align: center
+		max-width: 500px
+		border: 1px solid $linesColor
+		margin: 20px auto 0 auto
+		padding: 8px 0
+	&_women
+		+r($rWidthTab)
+			text-align: right
+
+.logo
+	+s(logo)
+	min-width: 286px
+	align-self: flex-start
+	+r($rWidthTab)
+		margin-left: 15px
+		margin-right: 15px
+	+r($rWidthMob)
+		order: 1
+		margin: 0 auto 30px auto
+
+.slider-main
+	&__inner
+		height: 620px
+		+inner
+		+r($rWidthDesc)
+			width: auto
+			height: auto
+		+r($rWidthMob)
+			display: none
+	&__slide
+		height: 620px
+		background-position: center center
+		background-repeat: no-repeat
+		+r($rWidthDesc)
+			background-size: 100%
+		+r($rWidthTab)
+			height: 400px
+
+	&__discounts
+		width: 140px
+		text-align: center
+		height: 57px
+		line-height: 57px
+		background: $white
+		color: $primaryTextColor
+		+openSans
+		font-size: 20px
+		font-weight: 700
+		text-transform: uppercase
+		margin-top: 93px
+
+.catalog
+	&__inner
+		height: 810px
+		+inner
+		padding: 25px 90px
+		+r($rWidthDesc)
+			padding: 20px 10px
+			width: auto
+			height: auto
+	&__items-wrap
+		+flex(space-between)
+		flex-wrap: wrap
+		+r($rWidthDesc)
+			+flex(space-around)
+	&__item
+		height: 320px
+		width: 220px
+		display: block
+		margin-bottom: 25px
+		border: 1px solid $linesColor
+		padding-top: 40px
+	&__img
+		width: 177px
+		height: 188px
+		margin: 0 auto
+	& p
+		text-align: center
+		color: $primaryTextColor
+		font-size: 18px
+		font-weight: 400
+		margin-top: 33px
+	&__btn
+		width: 220px
+		height: 67px
+		line-height: 67px
+		text-align: center
+		text-transform: uppercase
+		background: $primaryTextColor
+		color: $almostWhite
+		+openSans
+		font-size: 20px
+		font-weight: 700
+		margin: 0 auto
+		display: block
+		&:hover
+			background: darken($primaryTextColor, 20%)
+
+.benefits
+	background: $primaryTextColor
+	color: $almostWhite
+
+	&__inner
+		+inner
+		height: 200px
+		+flex(center, center)
+		+r($rWidthDesc)
+			width: auto
+		+r($rWidthTab)
+			height: auto
+
+	&__box
+		+flex(space-between, center)
+		flex-wrap: wrap
+
+		padding: 0 100px 0 130px
+		width: 100%
+		+r($rWidthDesc)
+			padding: 0 10px
+		+r($rWidthTab)
+			padding: 20px 10px
+			width: auto
+			display: inline
+
+	&__item
+		+flex(flex-start)
+		+r($rWidthTab)
+			width: 100%
+			+flex(flex-start)
+			margin-bottom: 15px
+			&:last-of-type
+				margin-bottom: 0
+	&__img
+		+s(quality)
+		margin-right: 20px
+		margin-top: 7px
+		&_del
+			+s(delivery)
+		&_ex
+			+s(exchange)
+			min-width: 37px
+
+	&__title
+		font-size: 26px
+		font-weight: 700
+		text-transform: uppercase
+		+openSans
+		letter-spacing: 2px
+		word-spacing: 2px
+
+	&__text
+		font-size: 13px
+		font-weight: 400
+
+.partners
+	background: $almostWhite
+	&__inner
+		+inner
+		height: 96px
+		+flex(center, center)
+		flex-wrap: wrap
+		+r($rWidthDesc)
+			width: auto
+			+flex(space-between, center)
+			padding: 0 10px
+		+r($rWidthMob)
+			height: auto
+			+flex(space-around, center)
+			padding: 30px 30px
+
+//ading imgs
+$partners: 'visa', 'e-money', 'ems', 'dpd'
+@each $item in $partners
+	.partners__#{$item}
+		+s($item)
+		margin-left: 55px
+		+r($rWidthDesc)
+			margin-left: 0
+		+r($rWidthMob)
+			margin: 0 auto 20px auto
+			&:last-of-type
+				margin-bottom: 0
+
+.catalog-line
+	background: #ebebeb
+	&__inner
+		+inner
+		height: 185px
+		+flex(center, center)
+		padding-left: 110px
+		padding-right: 105px
+		+r($rWidthDesc)
+			width: auto
+			height: auto
+			padding: 20px 10px
+	&__item
+		+r($rWidthDesc)
+			margin-right: 15px
+			margin-left: 15px
+	&__list
+		+flex(space-between)
+		width: 100%
+		+r($rWidthDesc)
+			+flex(space-around)
+			flex-wrap: wrap
+	&__link
+		width: 90px
+		display: block
+		&:hover .catalog-line__item-name
+			background: $primaryTextColor
+			color: #ebebeb
+
+
+	&__img
+		background-position: center center
+		background-repeat: no-repeat
+		height: 90px
+		margin: 0 auto
+	&__item-name
+		text-transform: uppercase
+		font-weight: 700
+		+openSans
+		color: $primaryTextColor
+		text-align: center
+		padding: 10px 0
+		width: 100%
+		margin-top: 10px
+
+.goods
+	&__inner
+		+inner
+		padding: 44px 0 60px 92px
+		+flex(flex-start)
+		+r($rWidthDesc)
+			width: auto
+			padding: 30px 10px 30px 20px
+		+r($rWidthMob)
+			flex-wrap: wrap
+			padding: 20px 10px
+
+	&__aside
+		width: 190px
+		min-width: 190px
+		margin-right: 55px
+		+r($rWidthDesc)
+			margin-right: 20px
+		+r($rWidthMob)
+			width: 300px
+			margin: 0 auto
+	&__category
+		color: $primaryTextColor
+		+openSans
+		font-size: 15px
+		text-transform: uppercase
+		font-weight: 600
+	&__category-item
+		margin-bottom: 7px
+		cursor: pointer
+		position: relative
+		& .js-status
+			position: absolute
+			right: 0
+	&__subcategory
+		padding-left: 20px
+		cursor: auto
+	&__subcategory-item
+		margin-bottom: 4px
+		&:first-of-type
+			margin-top: 5px
+	&__subcategory-link
+		font-size: 13px
+		font-weight: 400
+		text-transform: capitalize
+		cursor: pointer
+		&:hover
+			border-bottom: 1px solid $primaryTextColor
+
+	&__content
+		height: inherit
+		flex-wrap: wrap
+		width: 955px
+		font-size: 0
+		+r($rWidthDesc)
+			width: auto
+			text-align: center
+	&__content-item
+		width: 220px
+		height: auto
+		min-height: 320px
+		display: inline-block
+		margin-right: 25px
+		margin-bottom: 5px
+		border: 2px solid transparent
+		+r($rWidthDesc)
+			margin-right: 10px
+		+r($rWidthMob)
+			margin-right: 0
+		&:nth-of-type(4n)
+			margin-right: 0
+		&:hover
+			border: 2px solid $primaryTextColor
+		&:hover .sizes
+			opacity: 1
+		&:hover span
+			color: $white
+			background: $primaryTextColor
+		& img
+			display: block
+			margin: 20px auto 0 auto
+			max-width: 177px
+			max-height: 188px
+		& p
+			color: $primaryTextColor
+			font-size: 18px
+			font-weight: 400
+			text-transform: lowercase
+			margin-top: 5px
+			text-align: center
+		& span
+			width: 134px
+			height: 50px
+			line-height: 50px
+			text-align: center
+			display: block
+			color: $primaryTextColor
+			font-size: 24px
+			font-weight: 300
+			position: relative
+			bottom: -10px
+			margin: 0 auto
+
+.sizes
+	font-size: 0
+	text-align: center
+	opacity: 0
+	&__size
+		width: 26px
+		height: 33px
+		line-height: 33px
+		background: $primaryTextColor
+		color: $white
+		font-size: 15px
+		font-weight: 400
+		text-transform: uppercase
+		text-align: center
+		display: inline-block
+		margin-right: 5px
+		&:last-of-type
+			margin-right: 0
+
+
+
+

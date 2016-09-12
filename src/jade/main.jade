@@ -1,0 +1,46 @@
+extends _layout
+
+block title
+	title Artcore main
+
+block content
+	include _header
+	main
+		//start intro
+		section.intro
+			.intro__inner
+				a.collection-link(href="#" title="") Мужская коллекция
+				.logo(role="img")
+				a.collection-link.collection-link_women(href="#" title="") Женская коллекция
+		//end intro
+		//start slider
+		mixin sliderMainDiscounts
+			p.slider-main__discounts Скидки
+		section.slider-main
+			.slider-main__inner
+				.slider-main__slide(style="background-image: url('img/slider-main1.jpg')" role="img")
+					+sliderMainDiscounts
+				.slider-main__slide(style="background-image: url('img/slider-main2.jpg')" role="img")
+					+sliderMainDiscounts
+				.slider-main__slide(style="background-image: url('img/slider-main3.jpg')" role="img")
+					+sliderMainDiscounts
+		//end slider
+		//start catalog
+		- var catalogItems = ['футболка', 'свитшот', 'топик', 'боди', 'шорты', 'толстовка', 'спортивные штаны','легинсы','спортивные костюмы', 'бомбер']
+		section.catalog
+			.catalog__inner
+				.catalog__items-wrap
+					each item in catalogItems
+						a.catalog__item(href="#" title=item)
+							.catalog__img(style="background-image: url('http://placecage.com/177/188')")
+							p=item
+				a.catalog__btn(href="#" title="") каталог
+		//end catalog
+
+		include _benefits
+		include _partners
+		include _footer
+
+
+
+

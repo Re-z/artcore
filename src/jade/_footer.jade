@@ -1,0 +1,28 @@
+//start footer
+footer.footer
+   .footer__inner
+       .footer__box
+           - var socials = ["tw", "fb", "vk"]
+           ul.socials
+               each item in socials
+                   li.socials__item
+                       a.socials__link(class="socials__link_#{item}" href="#", title="#{item}")
+           .footer__links-wrap
+
+               ul.footer__list
+                   li: h6.footer__title Компания
+                   - var footerCompany = ['О проекте', 'Доставка и оплата', 'Производство', 'Помощь','Контакты']
+                   each item in footerCompany
+                       li.footer__list-item
+                           a.footer__link(href="" title=item)=item
+
+               ul.footer__list
+                   li: h6.footer__title.left-align Каталог
+                   - var footerCompany = ['Мужская коллекция', 'Женская коллекция', 'Скидки', 'Помощь']
+                   each item in footerCompany
+                       li.footer__list-item.left-align
+                           a.footer__link(href="" title=item)=item
+
+           a.footer__tel(href="tel: +7495888777666" title="") +7 495 888 777 666
+       p.footer__developer Разработка и продвижение сайта #[a(href="#" title="") advcreative]
+//end footer

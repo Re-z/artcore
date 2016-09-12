@@ -1,0 +1,135 @@
+$icons: (0:0)
+$icons: map-merge($icons,(cart-light-gray: (X: -469px, Y:-109px, W: 23px, H: 22px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(cart: (X: -442px, Y:-109px, W: 23px, H: 22px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(delivery: (X: -325px, Y:-160px, W: 27px, H: 47px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(dpd: (X: -290px, Y:-109px, W: 107px, H: 47px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(e-money: (X: -290px, Y:-34px, W: 178px, H: 34px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(ems: (X: -290px, Y:0px, W: 228px, H: 30px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(exchange: (X: -401px, Y:-109px, W: 37px, H: 39px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(fb: (X: -356px, Y:-160px, W: 15px, H: 29px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(header-logo: (X: 0px, Y:-213px, W: 234px, H: 51px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo: (X: 0px, Y:0px, W: 286px, H: 209px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(quality: (X: -290px, Y:-160px, W: 31px, H: 48px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(tw: (X: -472px, Y:-34px, W: 28px, H: 22px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(visa: (X: -290px, Y:-72px, W: 154px, H: 33px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(vk: (X: -448px, Y:-72px, W: 32px, H: 19px, TW: 518px, TH: 264px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
+
+//
+//.icon-cart-light-gray
+//	width: 23px
+//	height: 22px
+//	background-image: url('../img/icons.png')
+//	background-position: -469px -109px
+//
+//.icon-cart
+//	width: 23px
+//	height: 22px
+//	background-image: url('../img/icons.png')
+//	background-position: -442px -109px
+//
+//.icon-delivery
+//	width: 27px
+//	height: 47px
+//	background-image: url('../img/icons.png')
+//	background-position: -325px -160px
+//
+//.icon-dpd
+//	width: 107px
+//	height: 47px
+//	background-image: url('../img/icons.png')
+//	background-position: -290px -109px
+//
+//.icon-e-money
+//	width: 178px
+//	height: 34px
+//	background-image: url('../img/icons.png')
+//	background-position: -290px -34px
+//
+//.icon-ems
+//	width: 228px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: -290px 0px
+//
+//.icon-exchange
+//	width: 37px
+//	height: 39px
+//	background-image: url('../img/icons.png')
+//	background-position: -401px -109px
+//
+//.icon-fb
+//	width: 15px
+//	height: 29px
+//	background-image: url('../img/icons.png')
+//	background-position: -356px -160px
+//
+//.icon-header-logo
+//	width: 234px
+//	height: 51px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -213px
+//
+//.icon-logo
+//	width: 286px
+//	height: 209px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
+//.icon-quality
+//	width: 31px
+//	height: 48px
+//	background-image: url('../img/icons.png')
+//	background-position: -290px -160px
+//
+//.icon-tw
+//	width: 28px
+//	height: 22px
+//	background-image: url('../img/icons.png')
+//	background-position: -472px -34px
+//
+//.icon-visa
+//	width: 154px
+//	height: 33px
+//	background-image: url('../img/icons.png')
+//	background-position: -290px -72px
+//
+//.icon-vk
+//	width: 32px
+//	height: 19px
+//	background-image: url('../img/icons.png')
+//	background-position: -448px -72px
+//

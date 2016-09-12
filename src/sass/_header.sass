@@ -1,0 +1,131 @@
+.header
+	color: $textColor
+	&_in
+		background: $primaryTextColor
+		color: $headerGray
+	&__inner
+		+inner
+		height:  68px
+		line-height: 68px
+		+flex(center, center)
+		position: relative
+		+r($rWidthDesc)
+			width: auto
+			+flex(space-between, center)
+			border-bottom: 1px solid $linesColor
+			padding: 0 10px
+
+		&:before, &:after
+			display: block
+			content: ''
+			position: absolute
+			background: $linesColor
+			height: 1px
+			width: 600px
+			left: 0
+			bottom: 0
+			+r($rWidthDesc)
+				display: none
+		&:after
+			left: auto
+			right: 0
+		&_in
+			height: 70px
+			line-height: 70px
+			padding-left: 20px
+			&:before,&:after
+				display: none
+	&__logo
+		+s(header-logo)
+		position: absolute
+		left: 10px
+		top: 50%
+		margin-top: -25px
+		+r($rWidthTab)
+			display: none
+	&__box
+		width: 193px
+		+flex(space-between, center)
+		position: absolute
+		right: 0
+		top: 0
+		+r($rWidthTab)
+			position: static
+		+r($rWidthMob)
+			width: auto
+	&__tel
+		text-decoration: none
+		font-size: 13px
+		font-weight: 500
+		color: inherit
+		+r($rWidthMob)
+			display: none
+	&__cart
+		+s(cart)
+		display: block
+		margin-right: 20px
+		&_in
+			+sp(cart-light-gray)
+
+.nav
+	+r($rWidthDesc)
+		margin-left: 0
+		margin-right: 0
+		left: 0
+	+r($rWidthMob)
+		display: none
+		position: absolute
+		z-index: 10
+		width: 100%
+		top: 65px
+		background: $white
+		border-bottom: 1px solid $linesColor
+	&_in
+		margin: 0 auto 0 auto
+		+r($rWidthDesc)
+			margin: 0 auto
+		+r($rWidthTab)
+			margin-left: 0
+			margin-right: 0
+		+r($rWidthMob)
+			background: $primaryTextColor
+	&.is-opened
+		display: block
+
+	&__list
+		+flex(space-between)
+		width: 495px
+		margin: 0 auto
+		+r($rWidthMob)
+			flex-wrap: wrap
+			width: 100%
+			text-align: center
+		&_in
+			width: 340px
+	&__item
+		+r($rWidthMob)
+			width: 100%
+	&__link
+		text-decoration: none
+		font-size: 13px
+		font-weight: 400
+		color: inherit
+		padding-bottom: 5px
+		&:hover
+			border-bottom: 1px solid $linesColor
+		&_in:hover
+			color: $white
+			border-bottom: 1px solid white
+
+.burger
+	display: none
+	width: 40px
+	height: 40px
+	cursor: pointer
+	+r($rWidthMob)
+		display: block
+	& span
+		display: block
+		height: 2px
+		background: $linesColor
+		margin-top: 8px
